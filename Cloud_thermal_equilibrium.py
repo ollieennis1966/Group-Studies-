@@ -112,7 +112,7 @@ def rabi_frequency(time, r, I0_1, I0_2, w0_1, w0_2, delta, matrix_element, CG1, 
     step = time/dt
     x, y = r[step][0], r[step][1]
     I1 = I0_1*exp(-2*(((g*(time**2)/2)*sin(theta1) + x)**2 + y**2)/w0_1**2)
-    I1 = I0_2*exp(-2*(((g*(time**2)/2)*sin(theta2) + x)**2 + y**2)/w0_2**2)
+    I2 = I0_2*exp(-2*(((g*(time**2)/2)*sin(theta2) + x)**2 + y**2)/w0_2**2)
     rabi_eff = 2*sqrt(I1*I2)*(matrix_element**2)*CG1*CG2/(c*epsilon*(hbar**2)*2*delta)
     return rabi_eff
 
